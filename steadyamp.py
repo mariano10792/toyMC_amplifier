@@ -26,9 +26,9 @@ E_MUU=[i*2 for i in E_MUU]
 
 
 mu600,mu800,mu1000,mu1250,mu1500,mu1750,mu2000,mu2250,mu2500,mu2750,mu3072,a1,x1,c1,summ=[],[],[],[],[],[],[],[],[],[],[],[],[],[],[];
-A=[100,105,110,115,120,125]
-X=[8.5,8.25,8,7.75,7.5,7.25,7]
-C=[0.00075,0.0008,0.00085,0.0009,0.00095,0.001]
+A=[100,102,104,106,110,112,114,116,118,120]
+X=[8.5,8.3,8,1,7.9,7.7,7.5,7.3,7.1]
+C=[0.00075,0.000775,0.0008,0.000825,0.00085,0.000875,0.0009,0.000925,0.00095,0.000975,0.001]
 output='output'
 counter=0
 for a in A:
@@ -55,10 +55,15 @@ for a in A:
             gRanEng=TRandom3(0)
 
             events600=[[],[]]
+            events800=[[],[]]
             events1000=[[],[]]
+            events1250=[[],[]]
             events1500=[[],[]]
+            events1750=[[],[]]
             events2000=[[],[]]
+            events2250=[[],[]]
             events2500=[[],[]]
+            events2750=[[],[]]
             events3072=[[],[]]
             EVENTS=0
             ZEROS=0
@@ -81,21 +86,36 @@ for a in A:
                                 if n<600:
                                     events600[0].append(m)
                                     events600[1].append(n)
+                                if n<800:
+                                    events800[0].append(m)
+                                    events800[1].append(n)
                                 if n<1000:
                                     events1000[0].append(m)
                                     events1000[1].append(n)
+                                if n<1250:
+                                    events1250[0].append(m)
+                                    events1250[1].append(n)
                                 if n<1500:
                                     events1500[0].append(m)
                                     events1500[1].append(n)
+                                if n<1750:
+                                    events1750[0].append(m)
+                                    events1750[1].append(n)
                                 if n<2000:
                                     events2000[0].append(m)
                                     events2000[1].append(n)
+                                if n<2250:
+                                    events2250[0].append(m)
+                                    events2250[1].append(n)
                                 if n<2500:
                                     events2500[0].append(m)
                                     events2500[1].append(n)
+                                if n<2750:
+                                    events2750[0].append(m)
+                                    events2750[1].append(n)
                                 if n<3072:
                                     events3072[0].append(m)
-                                    events3072[1].append(n)                                                                                                                                            
+                                    events3072[1].append(n)
                             # for i in range(0,int(SPACE[m][n])): #create list of data
                             #     events[0].append(m)
                             #     events[1].append(n)
@@ -112,15 +132,15 @@ for a in A:
             # print(str(float(len(events3072[0]))/(443*3072.0)))
 
             mu600.append(float(len(events600[0]))/(443*600.0))
-            mu800.append(float(len(events600[0]))/(443*800.0))
+            mu800.append(float(len(events800[0]))/(443*800.0))
             mu1000.append(float(len(events1000[0]))/(443*1000.0))
-            mu1250.append(float(len(events1000[0]))/(443*1250.0))
+            mu1250.append(float(len(events1250[0]))/(443*1250.0))
             mu1500.append(float(len(events1500[0]))/(443*1500.0))
-            mu1750.append(float(len(events1500[0]))/(443*1750.0))
+            mu1750.append(float(len(events1750[0]))/(443*1750.0))
             mu2000.append(float(len(events2000[0]))/(443*2000.0))
-            mu2250.append(float(len(events2000[0]))/(443*2250.0))
+            mu2250.append(float(len(events2250[0]))/(443*2250.0))
             mu2500.append(float(len(events2500[0]))/(443*2500.0))
-            mu2750.append(float(len(events2500[0]))/(443*2750.0))
+            mu2750.append(float(len(events2750[0]))/(443*2750.0))
             mu3072.append(float(len(events3072[0]))/(443*3072.0))
             c1.append(c) #stores every c for every simulation
             x1.append(x0) #stores every x0 for every simulation
